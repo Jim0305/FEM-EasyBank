@@ -1,0 +1,96 @@
+@use '../util' as u;
+
+.footer {
+  background-color: var(--darkBlue);
+  color: var(--white);
+  text-align: center;
+  padding: 2.5rem;
+
+  a {
+    color: var(--white);
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: var(--limeGreen);
+    }
+
+    &:hover svg path {
+      fill: var(--limeGreen);
+    }
+  }
+
+  &__grid {
+    @include u.breakpoint(large) {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 3fr;
+      gap: 1rem;
+      justify-items: start;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.875rem;
+
+    @include u.breakpoint(large) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__column {
+    &:first-of-type {
+      @include u.breakpoint(large) {
+        align-self: end;
+      }
+    }
+    &:last-of-type {
+      @include u.breakpoint(large) {
+        justify-self: end;
+      }
+    }
+  }
+
+  &__logo {
+    margin-inline: auto;
+    margin-bottom: 1.875rem;
+
+    @include u.breakpoint(large) {
+      margin-inline: 0;
+      margin-block-end: 3.875rem;
+    }
+  }
+
+  &__links {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9375rem;
+
+    @include u.breakpoint(large) {
+      align-items: start;
+    }
+  }
+
+  &__item {
+    padding-block: 0.5rem;
+  }
+
+  &__cta {
+    margin-block: 1.875rem;
+    @include u.breakpoint(large) {
+      margin-block-start: 0;
+      margin-block-end: 3.875rem;
+      text-align: right;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.8125rem;
+    color: var(--grayishBlue);
+  }
+}

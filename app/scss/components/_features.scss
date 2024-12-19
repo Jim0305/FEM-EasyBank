@@ -1,0 +1,58 @@
+@use '../util' as u;
+
+.features {
+  background-color: var(--lightGrayishBlue);
+  text-align: center;
+
+  @include u.breakpoint(medium) {
+    text-align: left;
+  }
+
+  &__intro {
+    margin-bottom: 3.5rem;
+
+    p {
+      max-width: 60ch;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    @include u.breakpoint(medium) {
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(u.rem(270), 100%), 1fr)
+      );
+    }
+  }
+
+  &__card {
+    padding: 0.9375rem;
+  }
+
+  &__icon {
+    margin-bottom: 1.25rem;
+
+    @include u.breakpoint(large) {
+      margin-bottom: 1.75rem;
+    }
+    img {
+      display: inline-block;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--darkBlue);
+    margin-bottom: 1rem;
+
+    @include u.breakpoint(large) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__description {
+    font-size: var(--font-sm);
+  }
+}

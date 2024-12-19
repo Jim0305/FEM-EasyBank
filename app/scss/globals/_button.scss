@@ -1,0 +1,23 @@
+@use '../util' as u;
+
+.btn {
+  display: inline-block;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  border: 0;
+  line-height: 1;
+  cursor: pointer;
+  padding: u.em(14) u.em(35);
+  border-radius: 100vmax;
+  color: var(--white);
+  background-image: linear-gradient(
+    to right,
+    var(--limeGreen),
+    var(--brightCyan)
+  );
+  transition: opacity 300ms ease-in-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
